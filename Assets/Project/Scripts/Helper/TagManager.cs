@@ -5,7 +5,7 @@ public class GameObjectTags
     public const string UI_POINTER_ENTER = "UI_PointerEnter";
 }
 
-public class ScoreTags
+public class RatingTags
 {
     public const string PERFECT = "Perfect";
     public const string GREAT = "Great";

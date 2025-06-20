@@ -25,14 +25,19 @@ public class InputManager : MonoBehaviour
     public void GetHitTile(LayerMask layerMask)
     {
         if (!Touchscreen.current.primaryTouch.press.isPressed) return;
-        if (!(Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)) return;
 
-        Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(wp, Vector2.zero, layerMask);
-
-        if (hit.collider != null)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
         {
-            Debug.Log(hit.collider.gameObject.name);
+            Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(wp, Vector2.zero, layerMask);
+
+            if (hit.collider != null)
+            {
+                float tapTime = Time.time;
+                IHitPoint hitPoint = hit.collider.GetComponent<IHitPoint>();
+                if (hitPoint != null)
+                    hitPoint.TakeScore(tapTime);
+            }
         }
     }
 }

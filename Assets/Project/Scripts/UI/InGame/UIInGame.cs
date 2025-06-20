@@ -18,7 +18,7 @@ public class UIInGame : CustomMonoBehaviour
     private void MappingComponent()
     {
         if (this.uIScore != null && this.textFPS != null) return;
-        this.uIScore = GetComponentInChildren<UIScore>();
+        this.uIScore = GetComponentInChildren<UIScore>(true);
         this.textFPS = GetComponent<TextFPS>();
     }
 

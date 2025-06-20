@@ -12,20 +12,17 @@ public class BeatController : MonoBehaviour
     public delegate void BeatAction();
     public static event BeatAction OnBeat;
 
-    public bool isPlay = false;
+    private bool isPlay = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         this.beatInterval = 60f / bpm;
         this.nextBeatTime = Time.time + beatInterval;
-
-        if (this.isPlay)
-            this.musicSource.Play();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!this.isPlay) return;
 
@@ -34,5 +31,17 @@ public class BeatController : MonoBehaviour
             OnBeat?.Invoke();
             this.nextBeatTime += beatInterval;
         }
+    }
+
+    public void SetupBeatMusic(bool active)
+    {
+        this.isPlay = active;
+
+        this.nextBeatTime = Time.time + beatInterval;
+
+        if (active)
+            musicSource.Play();
+        else
+            musicSource.Stop();
     }
 }

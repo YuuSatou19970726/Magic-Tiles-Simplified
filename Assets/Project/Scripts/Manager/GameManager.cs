@@ -25,17 +25,24 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        this.beatController.isPlay = true;
+        this.beatController.SetupBeatMusic(true);
     }
 
     public void GameOver()
     {
-        this.beatController.isPlay = false;
+        this.beatController.SetupBeatMusic(false);
         UIController.Instance.ShowGameOverUI(this.score);
     }
 
     public void GameCompleted()
     {
 
+    }
+
+    public void UpdateScore(int score, string typeScore)
+    {
+        this.score += score;
+
+        UIController.Instance.UpdateScore(this.score, typeScore);
     }
 }
