@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TileController : MonoBehaviour
 {
@@ -6,19 +7,34 @@ public class TileController : MonoBehaviour
 
     public float fallSpeed = 5f;
 
+    private Vector3 currentPosition;
+    public bool isActive = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.ScaleTile();
+        this.currentPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        if (this.isActive)
+            transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
 
-        if (transform.position.y <= -10)
-            ObjectPool.Instance.ReturnObject(transform.gameObject);
+        if (transform.position.y <= -7f)
+        {
+            this.ReturnTile();
+            GameManager.Instance.GameOver();
+        }
+    }
+
+    public void ReturnTile()
+    {
+        this.isActive = false;
+        transform.position = this.currentPosition;
+        ObjectPool.Instance.ReturnObject(transform.gameObject);
     }
 
     [ContextMenu("Scale Tile")]

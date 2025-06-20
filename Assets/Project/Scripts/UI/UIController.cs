@@ -12,7 +12,11 @@ public class UIController : CustomMonoBehaviour
     [Header("Fade Image")]
     [SerializeField] private Image fadeImage;
 
+    [SerializeField] private UIInGame inGameUI;
+    [SerializeField] private UIGameOver gameOverUI;
+
     public void RestartTheGame() => StartCoroutine(this.ChangeImageAlpha(1f, 1f, GameManager.Instance.RestartScene));
+    public void QuitTheGame() => Application.Quit();
 
     protected override void Awake()
     {
@@ -36,6 +40,29 @@ public class UIController : CustomMonoBehaviour
 
     private void MappingComponent()
     {
+        if (this.inGameUI != null && this.gameOverUI != null) return;
+        this.inGameUI = GetComponentInChildren<UIInGame>(true);
+        this.gameOverUI = GetComponentInChildren<UIGameOver>(true);
+    }
+
+    public void SwitchTo(GameObject uiToSwitchOn)
+    {
+        foreach (GameObject go in this.UIElements)
+            go.SetActive(false);
+
+        uiToSwitchOn.SetActive(true);
+    }
+
+    public void UpdateScore(int score, string scoreType)
+    {
+        this.inGameUI.UpdateUIScore(score, scoreType);
+    }
+
+    public void ShowGameOverUI(int score)
+    {
+        this.SwitchTo(this.gameOverUI.gameObject);
+        this.gameOverUI.ShowGameOverScore(score);
+        TimeManager.Instance.PauseTime();
     }
 
     private IEnumerator ChangeImageAlpha(float targetAlpha, float duration, System.Action onComplete)

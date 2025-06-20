@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LinearUI : MonoBehaviour
+public class UILinear : MonoBehaviour
 {
     [SerializeField] private GameObject lineLeft;
     [SerializeField] private GameObject lineRight;

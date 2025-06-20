@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,8 @@ public class InputManager : MonoBehaviour
 {
     private static InputManager instance;
     public static InputManager Instance => instance;
+
+    [SerializeField] private LayerMask whatIsLayer;
 
     private void Awake()
     {
@@ -14,16 +17,22 @@ public class InputManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public RaycastHit? GetHitTile(LayerMask layerMask)
+    private void Update()
     {
-        if (!Touchscreen.current.primaryTouch.press.isPressed) return default;
+        this.GetHitTile(this.whatIsLayer);
+    }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+    public void GetHitTile(LayerMask layerMask)
+    {
+        if (!Touchscreen.current.primaryTouch.press.isPressed) return;
+        if (!(Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)) return;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-            return hit;
+        Vector2 wp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(wp, Vector2.zero, layerMask);
 
-        return default;
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.gameObject.name);
+        }
     }
 }

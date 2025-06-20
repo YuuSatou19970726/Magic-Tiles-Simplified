@@ -3,6 +3,7 @@ using UnityEngine;
 public class BeatController : MonoBehaviour
 {
     public AudioSource musicSource;
+    [Range(30f, 180f)]
     public float bpm = 60f;
 
     private float beatInterval;
@@ -11,8 +12,7 @@ public class BeatController : MonoBehaviour
     public delegate void BeatAction();
     public static event BeatAction OnBeat;
 
-    //remove when close project
-    public bool isPlay;
+    public bool isPlay = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

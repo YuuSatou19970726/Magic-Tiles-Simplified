@@ -58,6 +58,7 @@ public class ObjectPool : MonoBehaviour
         objectToGet.transform.position = target.position;
         objectToGet.transform.parent = null;
         objectToGet.SetActive(true);
+        objectToGet.GetComponent<TileController>().isActive = true;
 
         return objectToGet;
     }

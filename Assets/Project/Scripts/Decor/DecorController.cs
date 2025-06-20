@@ -31,7 +31,7 @@ public class DecorController : MonoBehaviour
 
         transform.localScale = transformLocalScale;
 
-        float topOffsetPercent = 0.15f;
+        float topOffsetPercent = 0.25f;
         Vector3 screenPosition = new Vector3(
             Screen.width / 2f,
             Screen.height * (1f - topOffsetPercent),
