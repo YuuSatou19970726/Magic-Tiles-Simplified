@@ -21,7 +21,10 @@ public class UITimeLine : MonoBehaviour
         this.timeLineBarFill.fillAmount = currentTimeLine / maxTimeLine;
 
         if (currentTimeLine == 0)
+        {
+            this.ReturnStarColor();
             this.indexStar = 1;
+        }
 
         if (this.indexStar > 3) return;
         if (currentTimeLine >= ((float)this.indexStar * maxTimeLine / (float)this.starPoints.Length))
@@ -51,5 +54,14 @@ public class UITimeLine : MonoBehaviour
         image.color = Color.yellow;
 
         this.indexStar++;
+    }
+
+    private void ReturnStarColor()
+    {
+        for (int i = 0; i < this.starPoints.Length; i++)
+        {
+            Image image = this.starPoints[i].GetComponent<Image>();
+            image.color = Color.white;
+        }
     }
 }
