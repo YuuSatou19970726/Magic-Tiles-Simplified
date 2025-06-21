@@ -35,7 +35,7 @@ public class TileHitBox : MonoBehaviour, IHitPoint
 
     public void TakeScore(float tapTime)
     {
-        if (!this.isTrigger) return;
+        if (!this.isTrigger && this.isVisualActive) return;
         this.RatingScore(tapTime, this.targetTime);
 
         this.isVisualActive = true;

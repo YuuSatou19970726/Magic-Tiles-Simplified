@@ -3,11 +3,9 @@ using UnityEngine.UI;
 
 public class UIInGame : CustomMonoBehaviour
 {
-    private UIScore uIScore;
+    private UIScore scoreUI;
     private TextFPS textFPS;
-
-    [Header("Music Info")]
-    [SerializeField] private Image timeLineBarFill;
+    private UITimeLine timeLineUI;
 
     protected override void Start()
     {
@@ -21,14 +19,15 @@ public class UIInGame : CustomMonoBehaviour
 
     private void MappingComponent()
     {
-        if (this.uIScore != null && this.textFPS != null) return;
-        this.uIScore = GetComponentInChildren<UIScore>(true);
+        if (this.scoreUI != null && this.textFPS != null && this.timeLineUI != null) return;
+        this.scoreUI = GetComponentInChildren<UIScore>(true);
         this.textFPS = GetComponent<TextFPS>();
+        this.timeLineUI = GetComponentInChildren<UITimeLine>(true);
     }
 
     public void UpdateUIScore(int score, string scoreType)
     {
-        this.uIScore.UpdateScore(score, scoreType);
+        this.scoreUI.UpdateScore(score, scoreType);
     }
 
     public void ShowFPS(bool enable)
@@ -38,6 +37,6 @@ public class UIInGame : CustomMonoBehaviour
 
     public void UpdateTimeLineBarFill(float currentTimeLine, float maxTimeLine)
     {
-        this.timeLineBarFill.fillAmount = currentTimeLine / maxTimeLine;
+        this.timeLineUI.UpdateTimeLineBarFill(currentTimeLine, maxTimeLine);
     }
 }
