@@ -37,11 +37,11 @@ public class GameManager : MonoBehaviour
         UIController.Instance.ShowGameCompleteUI();
     }
 
-    public void UpdateScore(int score, string typeScore)
+    public void UpdateScore(int score, RatingType ratingType)
     {
         this.score += score;
 
-        UIController.Instance.inGameUI.UpdateUIScore(this.score, typeScore);
+        UIController.Instance.inGameUI.UpdateUIScore(this.score, ratingType);
     }
 
     public void RestartScene()

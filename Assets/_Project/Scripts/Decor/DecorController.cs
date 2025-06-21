@@ -8,12 +8,6 @@ public class DecorController : MonoBehaviour
         this.ScaleDecor();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void ScaleDecor()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,7 +21,7 @@ public class DecorController : MonoBehaviour
 
         Vector3 transformLocalScale = transform.localScale;
         transformLocalScale.y = worldScreenHeight / height;
-        transformLocalScale.x = worldScreenWidth / width + 0.95f;
+        transformLocalScale.x = worldScreenWidth / width + 1.5f;
 
         transform.localScale = transformLocalScale;
 

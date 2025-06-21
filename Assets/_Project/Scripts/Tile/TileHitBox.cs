@@ -46,25 +46,25 @@ public class TileHitBox : MonoBehaviour, IHitPoint
     {
         float timeOffset = Mathf.Abs(tapTime - timeRating);
         int score = 0;
-        string rating = RatingTags.MISS;
+        RatingType ratingType = RatingType.MISS;
 
         if (timeOffset >= 0.05f && timeOffset <= 0.15f)
         {
             score = 100;
-            rating = RatingTags.PERFECT;
+            ratingType = RatingType.PERFECT;
         }
         else if (timeOffset > 0.15f && timeOffset <= 0.35f)
         {
             score = 70;
-            rating = RatingTags.GREAT;
+            ratingType = RatingType.GREAT;
         }
         else if (timeOffset > 0.35f && timeOffset <= 0.5f)
         {
             score = 50;
-            rating = RatingTags.GOOD;
+            ratingType = RatingType.GOOD;
         }
 
-        GameManager.Instance.UpdateScore(score, rating);
+        GameManager.Instance.UpdateScore(score, ratingType);
     }
 
     private void ReturnTileVisual()

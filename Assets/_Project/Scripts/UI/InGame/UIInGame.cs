@@ -25,9 +25,9 @@ public class UIInGame : CustomMonoBehaviour
         this.timeLineUI = GetComponentInChildren<UITimeLine>(true);
     }
 
-    public void UpdateUIScore(int score, string scoreType)
+    public void UpdateUIScore(int score, RatingType ratingType)
     {
-        this.scoreUI.UpdateScore(score, scoreType);
+        this.scoreUI.UpdateScore(score, ratingType);
     }
 
     public void ShowFPS(bool enable)
