@@ -1,0 +1,8 @@
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+D:/git_temp/Magic-Tiles-Simplified/.utmp/RelWithDebInfo/5sa1g2n3/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

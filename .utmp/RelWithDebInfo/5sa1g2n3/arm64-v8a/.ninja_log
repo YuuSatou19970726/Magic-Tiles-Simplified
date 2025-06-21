@@ -1,0 +1,23 @@
+# ninja log v5
+17	2743	7721952598965725	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a7732a065b84d066
+65	649	7721952577913235	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	917ee78dfbc00ff2
+652	817	7721952579640356	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5sa1g2n3/obj/arm64-v8a/libswappywrapper.so	986b7eefbc07aa96
+10	2159	7721952593135034	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ba327e18713c5f17
+2743	2841	7721952599995090	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5sa1g2n3/obj/arm64-v8a/libgame.so	93a2600e465c0d4c
+46	2095	7721952592429189	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b1ed44cd4e7b5de2
+38	2021	7721952591632558	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3abe21ee761d8334
+23	2030	7721952591673950	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	987860528b7e1e78
+56	2563	7721952597050320	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	902f775443f3bad7
+1	2077	7721952592202142	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	56e88a6ec943e17
+30	2565	7721952597071003	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	30c072366ac45fba
+77	409	7721954693830374	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	917ee78dfbc00ff2
+410	599	7721954695732720	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5sa1g2n3/obj/arm64-v8a/libswappywrapper.so	986b7eefbc07aa96
+33	1907	7721954708768160	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	987860528b7e1e78
+41	1946	7721954709167040	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	3abe21ee761d8334
+18	2002	7721954709636843	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	56e88a6ec943e17
+49	2069	7721954710259469	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b1ed44cd4e7b5de2
+26	2129	7721954711015795	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ba327e18713c5f17
+67	2288	7721954712626650	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	902f775443f3bad7
+59	2466	7721954714378780	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	30c072366ac45fba
+10	2545	7721954715204156	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a7732a065b84d066
+2545	2702	7721954716790617	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5sa1g2n3/obj/arm64-v8a/libgame.so	93a2600e465c0d4c

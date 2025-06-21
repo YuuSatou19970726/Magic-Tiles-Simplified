@@ -1,0 +1,12 @@
+# ninja log v5
+99	681	7721962728550537	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5c60a785b8db38d8
+682	1573	7721962734977985	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/th2y455r/obj/arm64-v8a/libswappywrapper.so	3cc4d7cdbea65cb7
+50	4023	7721962761942496	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	68fcc7c2bf93d1df
+90	4055	7721962762079343	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	3acdd2fdefa622a7
+27	4059	7721962762104627	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	e992302d48a1c345
+11	4069	7721962762619053	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	597f1a748eb1b009
+19	4129	7721962763255051	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4d7635c9ead134a4
+38	4323	7721962765166576	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e047131a7af47c21
+65	4391	7721962765883441	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7aa42bbf4a212f56
+1	4402	7721962765903786	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	db7291565316abdb
+4403	4542	7721962767380383	D:/git_temp/Magic-Tiles-Simplified/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/th2y455r/obj/arm64-v8a/libgame.so	29ff6e5466e7379
