@@ -20,6 +20,9 @@ public class UITimeLine : MonoBehaviour
     {
         this.timeLineBarFill.fillAmount = currentTimeLine / maxTimeLine;
 
+        if (currentTimeLine == 0)
+            this.indexStar = 1;
+
         if (this.indexStar > 3) return;
         if (currentTimeLine >= ((float)this.indexStar * maxTimeLine / (float)this.starPoints.Length))
         {

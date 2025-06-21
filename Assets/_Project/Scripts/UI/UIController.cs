@@ -14,9 +14,11 @@ public class UIController : CustomMonoBehaviour
 
     public UIInGame inGameUI { get; private set; }
     private UIGameOver gameOverUI;
+    private UIGameComplete gameCompleteUI;
 
-    public void RestartTheGame() => StartCoroutine(this.ChangeImageAlpha(1f, 1f, GameManager.Instance.RestartScene));
     public void QuitTheGame() => Application.Quit();
+    public void StartTheGame() => StartCoroutine(this.StartGameSequence());
+    public void ReturnMainMenu() => StartCoroutine(this.ChangeImageAlpha(1f, 1f, GameManager.Instance.ReturnMainMenu));
 
     protected override void Awake()
     {
@@ -40,9 +42,10 @@ public class UIController : CustomMonoBehaviour
 
     private void MappingComponent()
     {
-        if (this.inGameUI != null && this.gameOverUI != null) return;
+        if (this.inGameUI != null && this.gameOverUI != null && this.gameCompleteUI != null) return;
         this.inGameUI = GetComponentInChildren<UIInGame>(true);
         this.gameOverUI = GetComponentInChildren<UIGameOver>(true);
+        this.gameCompleteUI = GetComponentInChildren<UIGameComplete>(true);
     }
 
     public void SwitchTo(GameObject uiToSwitchOn)
@@ -57,12 +60,18 @@ public class UIController : CustomMonoBehaviour
     {
         this.SwitchTo(this.gameOverUI.gameObject);
         this.gameOverUI.ShowGameOverScore(score);
-        TimeManager.Instance.PauseTime();
     }
 
-    public void ShowGameCompleteUI()
+    public void ShowGameCompleteUI(int score)
     {
-        TimeManager.Instance.PauseTime();
+        this.SwitchTo(this.gameCompleteUI.gameObject);
+        this.gameCompleteUI.ShowGameCompleteScore(score);
+    }
+
+    public void RestartTheGame()
+    {
+        this.SwitchTo(this.inGameUI.gameObject);
+        GameManager.Instance.RestartScene();
     }
 
     private IEnumerator ChangeImageAlpha(float targetAlpha, float duration, System.Action onComplete)
@@ -84,6 +93,15 @@ public class UIController : CustomMonoBehaviour
 
         //Call the impletion method if it exits
         onComplete?.Invoke();
+    }
+
+    private IEnumerator StartGameSequence()
+    {
+        yield return null;
+        this.SwitchTo(this.inGameUI.gameObject);
+        GameManager.Instance.GameStart();
+
+        StartCoroutine(this.ChangeImageAlpha(0, 1f, null));
     }
 
     [ContextMenu("Assign Audio To Button")]

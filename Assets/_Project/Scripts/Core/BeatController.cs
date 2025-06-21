@@ -16,15 +16,6 @@ public class BeatController : MonoBehaviour
 
     private float maxTimeLine;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        this.beatInterval = 60f / bpm;
-        this.nextBeatTime = Time.time + this.beatInterval;
-
-        this.maxTimeLine = this.musicSource.clip.length;
-    }
-
     // Update is called once per frame
     private void Update()
     {
@@ -49,11 +40,15 @@ public class BeatController : MonoBehaviour
     {
         this.isPlay = active;
 
+        this.beatInterval = 60f / bpm;
         this.nextBeatTime = Time.time + this.beatInterval;
 
         if (active)
             musicSource.Play();
         else
             musicSource.Stop();
+
+        this.maxTimeLine = this.musicSource.clip.length;
+        UIController.Instance.inGameUI.UpdateTimeLineBarFill(0, maxTimeLine);
     }
 }
